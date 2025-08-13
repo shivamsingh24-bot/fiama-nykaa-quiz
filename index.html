@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Nykaa x Fiama – Happy Skin Quiz</title>
+    <meta name="description" content="Mobile-first mockup of Nykaa x Fiama quiz campaign – homepage promo, quiz flow, and reward page." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ff3e6c'/%3E%3Ctext x='32' y='39' font-size='28' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EN%3C/text%3E%3C/svg%3E" />
+    <meta property="og:title" content="Nykaa x Fiama – Happy Skin Quiz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://dummyimage.com/1200x630/ffffff/000000&text=Nykaa+x+Fiama+Quiz" />
+  </head>
+  <body>
+    <div class="site">
+      <div class="mobile-shell">
+        <!-- Screen: Nykaa homepage with Fiama promo tile -->
+        <section id="screen-home" class="screen screen--active" role="region" aria-labelledby="home-title">
+          <header class="nk-header" role="banner">
+            <div class="nk-brand">Nykaa</div>
+            <div class="nk-actions">
+              <button class="icon-btn" aria-label="Search">
+                <span class="icon icon-search" aria-hidden="true"></span>
+              </button>
+              <button class="icon-btn" aria-label="Cart">
+                <span class="icon icon-bag" aria-hidden="true"></span>
+              </button>
+            </div>
+          </header>
+
+          <main class="home-scroll" id="home-title">
+            <section class="nk-hero">
+              <div class="nk-hero-card"></div>
+              <div class="nk-hero-strip"></div>
+            </section>
+
+            <section class="nk-products">
+              <div class="nk-product"></div>
+              <div class="nk-product"></div>
+              <div class="nk-product"></div>
+            </section>
+
+            <!-- Fiama Quiz Promo Tile (mid-scroll) -->
+            <section class="promo-tile" aria-label="Fiama Happy Skin Quiz">
+              <div class="promo-card">
+                <div class="promo-top">
+                  <div class="fiama-logo" aria-label="Fiama"></div>
+                </div>
+                <div class="promo-body">
+                  <div class="promo-copy">
+                    <h2 class="promo-title">Take the Fiama Happy Skin Quiz</h2>
+                    <p class="promo-sub">Your path to happy skin</p>
+                    <button id="startQuizBtn" class="btn btn--primary">Start the Quiz</button>
+                  </div>
+                  <div class="promo-art" aria-hidden="true">
+                    <!-- Stylized Fiama body scrub bottle illustration -->
+                    <svg class="bottle" viewBox="0 0 120 220" xmlns="http://www.w3.org/2000/svg">
+                      <defs>
+                        <linearGradient id="gFiama" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stop-color="#00bfa5" />
+                          <stop offset="100%" stop-color="#1bc88a" />
+                        </linearGradient>
+                      </defs>
+                      <rect x="36" y="8" width="48" height="22" rx="6" fill="#0aa57a" />
+                      <rect x="22" y="28" width="76" height="170" rx="24" fill="url(#gFiama)" />
+                      <circle cx="60" cy="160" r="16" fill="rgba(255,255,255,0.25)" />
+                      <rect x="32" y="48" width="56" height="28" rx="8" fill="rgba(255,255,255,0.7)" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="nk-products">
+              <div class="nk-product"></div>
+              <div class="nk-product"></div>
+              <div class="nk-product"></div>
+            </section>
+          </main>
+
+          <nav class="nk-tabbar" role="navigation" aria-label="Nykaa primary">
+            <button class="tab is-active">Home</button>
+            <button class="tab">Categories</button>
+            <button class="tab">Offers</button>
+            <button class="tab">Account</button>
+          </nav>
+        </section>
+
+        <!-- Screen: Quiz -->
+        <section id="screen-quiz" class="screen" role="region" aria-labelledby="quiz-title" hidden>
+          <header class="nk-header" role="banner">
+            <button class="icon-btn" id="quizBackBtn" aria-label="Back to home">
+              <span class="icon icon-back" aria-hidden="true"></span>
+            </button>
+            <div class="nk-brand">Nykaa</div>
+            <div class="nk-actions">
+              <div class="fiama-mini-logo" aria-hidden="true"></div>
+            </div>
+          </header>
+
+          <main class="quiz-main">
+            <div class="quiz-card">
+              <div class="quiz-meta">
+                <span id="quizProgress" class="quiz-progress">Q1 of 3</span>
+              </div>
+              <h1 id="quiz-title" class="quiz-question">How often should you exfoliate your body for healthy, glowing skin?</h1>
+              <div id="quizOptions" class="quiz-options" role="group" aria-label="Answer options"></div>
+              <div class="quiz-cta">
+                <button id="nextBtn" class="btn btn--primary" disabled>Next</button>
+              </div>
+            </div>
+          </main>
+        </section>
+
+        <!-- Screen: Result / Reward -->
+        <section id="screen-result" class="screen" role="region" aria-labelledby="result-title" hidden>
+          <header class="nk-header" role="banner">
+            <button class="icon-btn" id="resultBackBtn" aria-label="Back to home">
+              <span class="icon icon-home" aria-hidden="true"></span>
+            </button>
+            <div class="nk-brand">Nykaa</div>
+            <div class="nk-actions">
+              <div class="fiama-mini-logo" aria-hidden="true"></div>
+            </div>
+          </header>
+
+          <main class="result-main">
+            <div class="result-card">
+              <p class="result-eyebrow">Congratulations!</p>
+              <h1 id="result-title" class="result-title">You’ve unlocked your Fiama trial pack.</h1>
+              <div class="reward-hero" aria-hidden="true">
+                <div class="reward-pack">
+                  <svg class="pack" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="gFiama2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00bfa5" />
+                        <stop offset="100%" stop-color="#1bc88a" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="10" y="30" width="300" height="140" rx="20" fill="url(#gFiama2)" />
+                    <rect x="40" y="60" width="80" height="80" rx="12" fill="rgba(255,255,255,0.9)" />
+                    <rect x="130" y="60" width="80" height="80" rx="12" fill="rgba(255,255,255,0.9)" />
+                    <rect x="220" y="60" width="60" height="80" rx="12" fill="rgba(255,255,255,0.9)" />
+                  </svg>
+                </div>
+              </div>
+              <button id="claimBtn" class="btn btn--fiama">Claim my trial pack</button>
+              <p class="result-note">Your reward is reserved for a limited time.</p>
+            </div>
+          </main>
+        </section>
+      </div>
+
+      <footer class="site-meta">
+        <p>
+          Mockup inspired by Nykaa UI and Fiama branding. Reference gameplay flow adapted from
+          <a href="https://nairboss.github.io/cetaphil-game/" target="_blank" rel="noopener">this sample</a>.
+        </p>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+
