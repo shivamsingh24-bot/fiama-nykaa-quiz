@@ -1,0 +1,383 @@
+:root {
+	--nykaa-pink: #fc2779;
+	--nykaa-pink-pressed: #e31f6b;
+	--text: #111111;
+	--muted: #6b7280;
+	--border: #eaeaea;
+	--bg: #ffffff;
+
+	--fiama-teal: #00c0a0;
+	--fiama-green: #7ed957;
+	--fiama-grad: linear-gradient(135deg, var(--fiama-teal), var(--fiama-green));
+
+	--radius: 14px;
+	--radius-sm: 10px;
+
+	--tap: 48px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+	margin: 0;
+	background: #f8f9fb;
+	color: var(--text);
+	font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.site {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	padding: 16px;
+}
+
+.phone {
+	width: 100%;
+	max-width: 420px;
+	background: var(--bg);
+	border: 1px solid #e6e6e6;
+	border-radius: 28px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+	overflow: hidden;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	height: 90vh;
+	min-height: 640px;
+}
+
+/* Nykaa header */
+.nykaa-header {
+	height: 56px;
+	display: grid;
+	grid-template-columns: 56px 1fr 56px;
+	align-items: center;
+	border-bottom: 1px solid var(--border);
+	background: #fff;
+}
+
+.nykaa-header--sub {
+	height: 52px;
+}
+
+.nykaa-left, .nykaa-right {
+	display: grid;
+	place-items: center;
+}
+
+.nykaa-icon {
+	font-size: 18px;
+	color: #333;
+}
+
+.nykaa-brand {
+	font-family: Montserrat, Inter, sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 0.3px;
+}
+
+/* Tab bar */
+.nykaa-tabbar {
+	height: 64px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	border-top: 1px solid var(--border);
+	background: #fff;
+}
+
+.tab {
+	border: 0;
+	background: #fff;
+	color: #555;
+	font-size: 12px;
+}
+
+.tab.active { color: var(--nykaa-pink); }
+
+.screen {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.hidden { display: none; }
+
+/* Feed */
+.feed {
+	padding: 12px;
+	display: grid;
+	gap: 12px;
+}
+
+.card {
+	background: #fff;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	overflow: hidden;
+}
+
+/* Placeholder cards */
+.placeholder {
+	display: grid;
+	grid-template-rows: 160px 60px;
+}
+
+.ph-img {
+	background: linear-gradient(180deg, #f2f2f2, #ebebeb);
+}
+
+.ph-text {
+	padding: 12px;
+}
+
+.ph-text::before {
+	content: "";
+	display: block;
+	height: 12px;
+	width: 70%;
+	background: #f0f0f0;
+	border-radius: 6px;
+}
+
+/* Promo card */
+.promo {
+	display: grid;
+	gap: 8px;
+	padding: 14px;
+}
+
+.promo-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.fiama-logo {
+	display: grid;
+	line-height: 1;
+}
+
+.fiama-logo span {
+	font-family: Montserrat, Inter, sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	background: var(--fiama-grad);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.fiama-logo small {
+	color: var(--muted);
+	font-size: 10px;
+	margin-top: 2px;
+}
+
+.promo-body {
+	display: grid;
+	grid-template-columns: 1fr 140px;
+	align-items: center;
+	gap: 4px;
+}
+
+.promo-title {
+	font-family: Montserrat, Inter, sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	margin: 0 0 6px 0;
+	color: var(--text);
+}
+
+.promo-tagline {
+	color: var(--muted);
+	font-size: 12px;
+	margin: 8px 0 10px;
+}
+
+.promo-product {
+	display: grid;
+	place-items: center;
+}
+
+.tube {
+	width: 120px;
+	height: auto;
+}
+
+/* Buttons */
+.btn {
+	height: var(--tap);
+	padding: 0 18px;
+	border-radius: 999px;
+	border: 0;
+	font-weight: 700;
+	font-size: 14px;
+	cursor: pointer;
+	transition: transform 0.04s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+	will-change: transform;
+}
+
+.btn:active { transform: translateY(1px) scale(0.99); }
+
+.btn-nykaa {
+	background: var(--nykaa-pink);
+	color: #fff;
+	box-shadow: 0 6px 16px rgba(252, 39, 121, 0.3);
+}
+
+.btn-nykaa:hover { background: var(--nykaa-pink-pressed); }
+
+.btn-nykaa:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.btn-fiama {
+	background: var(--fiama-grad);
+	color: #093a2c;
+	border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Quiz */
+.quiz-header {
+	display: grid;
+	grid-template-columns: 44px 1fr 44px;
+	align-items: center;
+	height: 52px;
+	border-bottom: 1px solid var(--border);
+}
+
+.icon-btn {
+	height: 36px;
+	width: 36px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: #fff;
+	cursor: pointer;
+}
+
+.quiz-progress {
+	justify-self: center;
+	font-weight: 700;
+	font-family: Montserrat, Inter, sans-serif;
+}
+
+.quiz-wrap {
+	display: grid;
+	gap: 12px;
+	padding: 14px;
+}
+
+.quiz-question {
+	font-weight: 700;
+	font-size: 18px;
+	margin: 8px 0 6px;
+}
+
+.options {
+	display: grid;
+	gap: 10px;
+}
+
+.option {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	padding: 14px;
+	min-height: 60px;
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--border);
+	background: #fff;
+	cursor: pointer;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.option:hover { border-color: #ddd; }
+
+.option.disabled {
+	pointer-events: none;
+	opacity: 0.9;
+}
+
+.option-label {
+	font-size: 14px;
+	color: var(--text);
+	font-weight: 500;
+}
+
+.option-indicator {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 2px solid #d4d4d4;
+	display: grid;
+	place-items: center;
+}
+
+.option.correct {
+	border-color: #1dbf73;
+	background: #eefcf5;
+}
+
+.option.correct .option-indicator {
+	border-color: #1dbf73;
+	background: #1dbf73;
+	color: #fff;
+}
+
+.option.incorrect {
+	border-color: #ef4444;
+	background: #fff1f1;
+}
+
+.option.incorrect .option-indicator {
+	border-color: #ef4444;
+	background: #ef4444;
+	color: #fff;
+}
+
+.quiz-cta {
+	margin-top: 6px;
+	display: flex;
+	justify-content: center;
+}
+
+/* Result */
+.result {
+	padding: 16px;
+	display: grid;
+	gap: 12px;
+	text-align: center;
+}
+
+.result-title {
+	font-family: Montserrat, Inter, sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	margin: 8px 0 2px;
+}
+
+.result-hero {
+	display: grid;
+	place-items: center;
+	padding: 8px 0 2px;
+}
+
+.tube-lg {
+	width: 200px;
+	height: auto;
+}
+
+.claim { display: grid; gap: 6px; }
+
+.claim-note {
+	color: var(--muted);
+	font-size: 12px;
+	margin: 0;
+}
+
+/* Misc */
+.spacer {
+	height: 40vh;
+}
